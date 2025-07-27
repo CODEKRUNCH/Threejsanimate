@@ -57,4 +57,12 @@ function animate()
     
     Renderer.render(scene,camera);
 }
+
+//8.Handle window resiszing 
+window.addEventListener('resize',()=>{
+    camera.aspect= window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    Renderer.setSize(window.innerWidth,window.innerHeight);
+})
+
 animate();
